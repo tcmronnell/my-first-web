@@ -40,12 +40,26 @@
             margin: 10px 0;
         }
 
+        .btn {
+            background: #c2547a;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-family: Georgia, serif;
+            font-size: 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
     </style>
 </head>
 <body>
-    <audio autoplay loop>
+    <audio id="myAudio" loop>
         <source src="song.mp3" type="audio/mpeg">
     </audio>
+
+    <button class="btn" onclick="playMusic()">Play for us</button>
 
     <h1 id="name">Caitlin 🌸</h1>
     <div class="divider">- Seventeen Months -</div>
@@ -59,6 +73,11 @@ byeeeeeeee❤️</p>
 
 
     <script>
+
+        function playMusic() {
+            document.getElementById("myAudio").play()
+            document.querySelector(".btn").style.display = "none"
+        }
 
        setInterval(function() {
         var h = document.createElement("div")
