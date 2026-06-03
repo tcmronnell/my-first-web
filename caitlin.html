@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Caitlin</title>
+    <style>
+
+        body{
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: #fff0f5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1{
+            font-family: Georgia, serif;
+            font-size: 64px;
+            color: #c2547a;
+            letter-spacing: 4px;
+        }
+
+        p{
+            font-family: Georgia, serif;
+            font-size: 20px;
+            color: #a0527a;
+            text-align: center;
+            max-width: 500px;
+            line-height: 1.8;
+        }
+
+        .divider {
+            color: #c2547a;
+            font-family: Georgia, serif;
+            font-size: 16px;
+            letter-spacing: 6px;
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <h1 id="name">Caitlin 🌸</h1>
+    <div class="divider">- Seventeen Months -</div>
+    <p id="message">Helloo preety princess❤️,it's been a year and five months since we started dating<br>
+    I am grateful to God for you❤️, you have shown me what it means to love and be loved💕<br>
+And as you know, ni mimi tu na wewe, and i pray it stays that way because i love it here.<br>
+ NAKUPENDA SANA BOOBOOO❤️<br>
+byeeeeeeee❤️</p>
+
+<div id="hearts"></div>
+
+
+    <script>
+
+       setInterval(function() {
+        var h = document.createElement("div")
+        h.innerHTML = "💕"
+        h.style.position = "fixed"
+        h.style.left = Math.random() * 100 + "vw"
+        h.style.top = "100vh"
+        h.style.fontSize = Math.random() * 20 + 10 + "px"
+        h.style.transition = "top 4s ease, opacity 4s"
+        document.body.appendChild(h)
+        setTimeout(function() {
+            h.style.top = "-10vh" 
+        }, 100)
+       }, 800)
+
+        
+
+    </script>
+</body>
+
+    
+</html>
