@@ -97,6 +97,30 @@
       text-shadow: 0 0 12px rgba(64, 224, 208, 0.3);
     }
 
+    .skill-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .skill-badge {
+      padding: 0.6rem 0.9rem;
+      background: #151515;
+      border: 1px solid #385a58;
+      border-radius: 999px;
+      color: #f0f0f0;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .skill-badge:hover {
+      border-color: #40e0d0;
+      box-shadow: 0 0 14px rgba(64, 224, 208, 0.45);
+      transform: translateY(-2px);
+    }
+
     a {
       color: #40e0d0;
       font-weight: 600;
@@ -155,8 +179,14 @@
     </section>
 
     <section id="skills">
-    <h2>Skills</h2>
-    <p>HTML. I am currently learning full-stack web development.</p>
+      <h2>TECH STACK</h2>
+      <div class="skill-badges" aria-label="Technical skills">
+        <span class="skill-badge">HTML5</span>
+        <span class="skill-badge">CSS3</span>
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">Git</span>
+        <span class="skill-badge">GitHub</span>
+      </div>
     </section>
 
     <section id="projects">
