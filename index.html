@@ -10,16 +10,71 @@
   <style>
     body {
       margin: 0;
-      padding: 3rem 1.5rem;
       background: #121212;
       color: #f0f0f0;
       font-family: "Inter", sans-serif;
       line-height: 1.6;
-      max-width: 800px;
-      margin-inline: auto;
     }
 
-    h1 {
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      background: rgba(18, 18, 18, 0.95);
+      border-bottom: 1px solid #2d2d2d;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      color: #f0f0f0;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: #f0f0f0;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #40e0d0;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: #40e0d0;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    #home {
+      margin-bottom: 2rem;
+    }
+
+    #home h1 {
       color: #40e0d0;
       font-size: 2.5rem;
       text-shadow: 0 0 18px rgba(64, 224, 208, 0.35);
@@ -27,6 +82,7 @@
 
     section {
       margin-top: 1.5rem;
+      scroll-margin-top: 5rem;
       padding: 1.5rem;
       background: #1b1b1b;
       border: 1px solid #2d2d2d;
@@ -45,26 +101,91 @@
       color: #40e0d0;
       font-weight: 600;
     }
+
+    @media (max-width: 640px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        padding: 0.5rem 1.5rem 1rem;
+        background: #181818;
+        border-bottom: 1px solid #2d2d2d;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links li {
+        padding: 0.6rem 0;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>hello world!</h1>
-  <p>Hi, my name is Ronnell. I am a student and developer who enjoys creating things for the web.</p>
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="logo" href="#home">RONNELL.DEV</a>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-  <section>
+  <main>
+    <section id="home">
+      <h1>HEY, I'M RONNELL 👋</h1>
+      <p>Hi, my name is Ronnell. I am a student and developer who enjoys creating things for the web.</p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>I am a student and developer who enjoys creating things for the web.</p>
+    </section>
+
+    <section id="skills">
     <h2>Skills</h2>
     <p>HTML. I am currently learning full-stack web development.</p>
-  </section>
+    </section>
 
-  <section>
+    <section id="projects">
     <h2>Projects</h2>
     <p><a href="https://github.com/tcmronnell/CodeWithRon">CodeWithRon</a> is my first project, where I am building and practicing web development skills.</p>
-  </section>
+    </section>
 
-  <section>
+    <section id="contact">
     <h2>Contact</h2>
     <p>Email: tcmronnell@gmail.com</p>
     <p>GitHub: <a href="https://github.com/tcmronnell">github.com/tcmronnell</a></p>
-  </section>
+    </section>
+  </main>
+
+  <script>
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+    });
+
+    navLinks.addEventListener("click", (event) => {
+      if (event.target.matches("a")) {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  </script>
 </body>
 </html>
