@@ -21,6 +21,15 @@
       scroll-behavior: smooth;
     }
 
+    .site-header {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 0;
+      color: #f0f0f0;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
     main {
       max-width: 800px;
       margin: 0 auto;
@@ -151,6 +160,16 @@
       transform: translateY(-2px);
     }
 
+    .github-button {
+      border-color: #8f4545;
+      box-shadow: 0 0 12px rgba(220, 80, 80, 0.2);
+    }
+
+    .github-button:hover {
+      border-color: #ff7272;
+      box-shadow: 0 0 18px rgba(220, 80, 80, 0.6);
+    }
+
     a {
       color: #40e0d0;
       font-weight: 600;
@@ -158,6 +177,8 @@
   </style>
 </head>
 <body>
+  <header class="site-header">BOSTONE.DEV 🥷</header>
+
   <main>
     <section id="home">
       <h1>HEY, I'M RONNELL 👋</h1>
@@ -177,17 +198,17 @@
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
+      <h2>PROJECTS</h2>
       <div class="project-card">
         <p><a href="https://github.com/tcmronnell/CodeWithRon">CodeWithRon</a> is my first project, where I am building and practicing web development skills.</p>
       </div>
     </section>
 
     <section id="contact">
-      <h2>LET'S BUILD SOMETHING.</h2>
+      <h2>GitHub</h2>
       <p class="contact-intro">Have an idea or just want to say hello?</p>
       <div class="contact-links">
-        <a class="contact-link" href="https://github.com/tcmronnell">◉ GitHub</a>
+        <a class="contact-link github-button" href="https://github.com/tcmronnell">◉ GitHub</a>
       </div>
     </section>
   </main>
